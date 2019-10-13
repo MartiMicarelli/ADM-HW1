@@ -687,6 +687,22 @@ if __name__ == '__main__':
 
     insertionSort2(n, arr)
 
+# Date and Time -> Calendar Module
+import calendar
+
+date = input().strip().split()
+
+daysCalendar = list(calendar.day_name)
+print(daysCalendar[calendar.weekday(int(date[2]), int(date[0]), int(date[1]))].upper())
+
+# Errors and Exceptions -> Exceptions
+for _ in range(int(input())):
+    a, b = input().split()
+    try:
+        print(int(a) // int(b))
+    except Exception as exc:
+        print('Error Code: ' + str(exc))
+
 
 
 
