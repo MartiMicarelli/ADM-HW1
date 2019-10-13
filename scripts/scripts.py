@@ -507,6 +507,134 @@ for _ in range(N):
     sum+=int(s.MARKS)
 print('{:.2f}'.format(sum/N))
 
+# Birthday Cake Candles
+import math
+import os
+import random
+import re
+import sys
+
+def birthdayCakeCandles(ar):
+    count=0
+    m = max(ar)
+    for i in range(len(ar)):
+        if(ar[i]==m):
+            count+=1
+    return count
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ar_count = int(input())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = birthdayCakeCandles(ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+# Kangaroo
+import math
+import os
+import random
+import re
+import sys
+
+def kangaroo(x1, v1, x2, v2):
+    if x1==x2:
+        if v1==v2:
+            return "YES"
+        else:
+            return "NO"
+    elif x1<=x2 and v1<=v2:
+        return "NO"
+    elif (x2-x1)%(v1-v2)==0:
+        return "YES"
+    else:
+        return "NO"
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    x1V1X2V2 = input().split()
+
+    x1 = int(x1V1X2V2[0])
+
+    v1 = int(x1V1X2V2[1])
+
+    x2 = int(x1V1X2V2[2])
+
+    v2 = int(x1V1X2V2[3])
+
+    result = kangaroo(x1, v1, x2, v2)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+
+# Viral Advertising
+import math
+import os
+import random
+import re
+import sys
+
+def viralAdvertising(n):
+    nShared=5
+    sum=0
+    for i in range(1,n+1):
+        nLiked = nShared//2
+        sum+=nLiked
+        nShared = nLiked*3
+    return sum
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    result = viralAdvertising(n)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+# Recursive Digit Sum
+import math
+import os
+import random
+import re
+import sys
+
+def super_digit(n, k):
+    digits = map(int, list(n))
+    return whole_super_digit(str(sum(digits) * k))
+
+def whole_super_digit(p):
+    if len(p) == 1:
+        return int(p)
+    else:
+        digits = map(int, list(p))
+        return whole_super_digit(str(sum(digits)))
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nk = input().split()
+
+    n = nk[0]
+
+    k = int(nk[1])
+
+    result = super_digit(n, k)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+
 
 
 
