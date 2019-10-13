@@ -634,6 +634,62 @@ if __name__ == '__main__':
 
     fptr.close()
 
+# Insertion Sort - Part 1
+import math
+import os
+import random
+import re
+import sys
+
+def insertionSort1(n, arr):
+    v = arr[-1]
+    for i in range(n-2, -1, -1):
+        if arr[i] > v:
+            arr[i+1] = arr[i]
+            print(*arr, sep=" ")
+        else:
+            arr[i+1] = v
+            print(*arr, sep=" ")
+            return
+    arr[0] = v
+    print(*arr, sep=" ")
+    return
+
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    insertionSort1(n, arr)
+
+# Insertion Sort - Part 2
+import math
+import os
+import random
+import re
+import sys
+
+def insertionSort2(n, arr):
+    for i in range(1, len(arr)):
+        temp = arr[i]
+        j = i
+        while j > 0 and temp < arr[j-1]:
+            arr[j] = arr[j-1]
+            j -= 1
+        arr[j] = temp
+        print(*arr, sep=" ")
+
+
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    insertionSort2(n, arr)
+
+
+
+
 
 
 
